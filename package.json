@@ -1,0 +1,24 @@
+{
+  "name": "eat-da-burger",
+  "version": "1.0.0",
+  "description": "handlebars homework application",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/github.com/mstevijo.git"
+  },
+  "keywords": [
+    "eat-da-burger",
+    "handlebars",
+    "heroku"
+  ],
+  "author": "Stevi Jo Malinowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/github.com/mstevijo/issues"
+  },
+  "homepage": "https://github.com/github.com/mstevijo#readme"
+}

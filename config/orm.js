@@ -8,7 +8,7 @@ function createQmarks(num) {
     return arr.toString();
 }
 
-function translateSql(obj) {
+function translateSql(ob) {
     var arr = [];
     for(var key in ob) {
         var value = ob[key];
@@ -55,11 +55,12 @@ var orm = {
     },
 
 update: function(table, objColVals, condition, cb) {
-    var dbQuery = "UPDATE " + table + " SET " + translateSql(objColVals) + " WHERE " 
+    var dbQuery = "UPDATE " + table + " SET " + 
+    translateSql(objColVals) + " WHERE " 
     + condition;
 
     console.log(dbQuery);
-        connection.query(dbQuery, vals, function(err, res){
+        connection.query(dbQuery, function(err, res){
             if (err) {
                 throw err;
             }
@@ -71,7 +72,7 @@ delete: function(table, condition, cb) {
     var dbQuery = "DELETE FROM " + table + " WHERE " + condition;
 
     console.log(dbQuery);
-        connection.query(dbQuery, vals, function(err, res){
+        connection.query(dbQuery, function(err, res){
             if (err) {
                 throw err;
             }

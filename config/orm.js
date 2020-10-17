@@ -68,16 +68,15 @@ update: function(table, objColVals, condition, cb) {
         });
 },
 
-delete: function(table, condition, cb) {
+delete: function (table, condition, cb) {
     var dbQuery = "DELETE FROM " + table + " WHERE " + condition;
-
-    console.log(dbQuery);
-        connection.query(dbQuery, function(err, res){
-            if (err) {
-                throw err;
-            }
-            cb(res);
-        });
+    // console.log(dbQuery);
+    connection.query(dbQuery, function (err, res) {
+        if (err) {
+            throw err;
+        }
+        cb(res);
+    });
 }
 };
 

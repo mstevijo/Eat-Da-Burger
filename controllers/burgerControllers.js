@@ -11,6 +11,7 @@ router.get("/", function(req, res) {
         console.log(hdbrsObj);
         res.render("index", hdbrsObj);
     });
+});
 
     router.post("/api/burgers", function(req, res){
         burger.insertOne(
@@ -18,8 +19,7 @@ router.get("/", function(req, res) {
             [req.body.burger_name, req.body.devoured],
             function(result) {
                 res.json({ id: result.insertId});
-            }
-        );
+            });
     });
 
     router.put("/api/burgers/:id", function(req, res){
@@ -29,7 +29,8 @@ router.get("/", function(req, res) {
         burger.updateOne({ devoured: req.body.devoured }, condition, function(result){
             if (result,changedRows === 0) {
                 return res.status(404).end();
-            }else{
+            }
+            else{
                 res.status(200).end();
             }
         });
@@ -42,11 +43,12 @@ router.get("/", function(req, res) {
         burger.deleteOne(condition, function(result){
             if (result,changedRows === 0) {
                 return res.status(404).end();
-            }else{
+            }
+            else{
                 res.status(200).end();
             }
         });
     });
-});
+
 
 module.exports = router;

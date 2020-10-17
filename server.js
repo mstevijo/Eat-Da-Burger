@@ -7,10 +7,10 @@ var PORT = process.env.PORT || 3000;
 
 app.use(express.static("public"));
 
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.engine("handlebars", exphbs({defaultLayout: "main"}));
+app.engine("handlebars", exphbs({ defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 var routes = require("./controllers/burgerControllers.js");

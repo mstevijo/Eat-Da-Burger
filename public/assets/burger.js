@@ -4,7 +4,7 @@ $(function () {
         var newBurger = {
             burger_name: $("#newburger").val().trim(), devoured: 0
         };
-        $.ajax("/api/burgers", {
+        $.ajax("/api/burger", {
             type: "POST",
             data: newBurger
         }).then(function () {
